@@ -26,16 +26,35 @@ class  App extends Component{
     );
   }
 
+
   render() {
+
+    const filteredTshirts = this.state.t_shirts.filter((t_shirt) => {
+      return t_shirt.name.toLocaleLowerCase().includes(this.state.searchField);
+    });
+
     return (
       <div className="App">
-      {
-        this.state.t_shirts.map((t_shirt) => {
-          return <div key={t_shirt.id}> 
+        <input 
+        className = 'search-box' 
+        type='search' 
+        placeholder='search t-shirts' 
+        onChange={(event) => {
+          const searchField = event.target.value.toLocaleLowerCase();
+          this.setState(() => {
+            return { searchField };
+            //return { t_shirts: filteredTshirts };
+          });
+        }}
+      />
+
+      {filteredTshirts.map((t_shirt) => {
+          return (
+          <div key={t_shirt.id}> 
             <h1>{t_shirt.name}</h1>
           </div>
-        })
-      }  
+          );
+        })}   
       </div>
     );
   }
