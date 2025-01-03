@@ -1,2 +1,3 @@
 # MyExercises
-Here i will write training projects
+
+1. Flask Training - 12/24/2024
