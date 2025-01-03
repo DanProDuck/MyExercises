@@ -1,0 +1,10 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "python.defaultInterpreterPath"
+            ],
+            "url": "flask-exer\\venv\\Scripts\\python.exe"
+        }
+    ]
+}
